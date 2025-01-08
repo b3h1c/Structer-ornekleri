@@ -3,11 +3,11 @@
 #include <string.h>
 
 using namespace std;
-/*3-	Bir özel kurye işletmesi için aşağıdaki özelliklerde bir programa ihtiyaç duyulmaktadır. 
-	gönderinin gönderen ve alıcısı vardır. Gönderen ve alıcı "adı_soyadı, adresi, telefon_no, adres" bilgilerine sahiptir.
-	gönderinin de "gönderi_no, ağırlık, hacim, garanti(e/h), ücret" olarak kendi bilgileri vardır.
-	kuryenin "adı_soyadı, telefon_no" bilgileri vardır.
-Bu ihtiyaçlara göre 5 adet gönderinin adresten alım, adrese teslim süreçlerini kayıt altında tutacak bir veri yapısı tanımlayın ve 5 adet gönderi için deneyin
+/*3-	Bir Ã¶zel kurye iÃ¾letmesi iÃ§in aÃ¾aÃ°Ã½daki Ã¶zelliklerde bir programa ihtiyaÃ§ duyulmaktadÃ½r. 
+	gÃ¶nderinin gÃ¶nderen ve alÃ½cÃ½sÃ½ vardÃ½r. GÃ¶nderen ve alÃ½cÃ½ "adÃ½_soyadÃ½, adresi, telefon_no, adres" bilgilerine sahiptir.
+	gÃ¶nderinin de "gÃ¶nderi_no, aÃ°Ã½rlÃ½k, hacim, garanti(e/h), Ã¼cret" olarak kendi bilgileri vardÃ½r.
+	kuryenin "adÃ½_soyadÃ½, telefon_no" bilgileri vardÃ½r.
+Bu ihtiyaÃ§lara gÃ¶re 5 adet gÃ¶nderinin adresten alÃ½m, adrese teslim sÃ¼reÃ§lerini kayÃ½t altÃ½nda tutacak bir veri yapÃ½sÃ½ tanÃ½mlayÃ½n ve 5 adet gÃ¶nderi iÃ§in deneyin
 */
 struct Kisi{
 	string ad_soyad;
@@ -30,7 +30,7 @@ struct Kurye{
 	string tel_no;
 };
 int main(){
-	Gonderi gonderi[2];
+	Gonderi gonderi[5];
 	Kurye kurye;
 	
 	cout<<"Kurye ad soyad girin: ";
@@ -38,54 +38,54 @@ int main(){
 	cout<<"Kurye tel no girin: ";
 	getline(cin,kurye.tel_no);
 	
-	for(int i=0;i<2;i++){
-		cout<<"--"<<i+1<<". Gönderi Bilgileri--"<<endl;
-		cout<<"Gönderi no girin: ";
+	for(int i=0;i<5;i++){
+		cout<<"--"<<i+1<<". GÃ¶nderi Bilgileri--"<<endl;
+		cout<<"GÃ¶nderi no girin: ";
 		cin>>gonderi[i].gonderi_no;
-		cout<<"Ağırlık girin: ";
+		cout<<"AÃ°Ã½rlÃ½k girin: ";
 		cin>>gonderi[i].agirlik;
 		cout<<"Hacim girin: ";
 		cin>>gonderi[i].hacim;
-		cout<<"Garanti (evet=e,hayır=h): ";
+		cout<<"Garanti (evet=e,hayÃ½r=h): ";
 		cin>>gonderi[i].garanti;
-		cout<<"Ücret girin: ";
+		cout<<"Ãœcret girin: ";
 		cin>>gonderi[i].ucret;
 		
-		cout<<"**Gönderen Bilgileri**"<<endl;
-		cout<<"Gönderici ad soyad: ";
+		cout<<"**GÃ¶nderen Bilgileri**"<<endl;
+		cout<<"GÃ¶nderici ad soyad: ";
 		getline(cin,gonderi[i].gonderen.ad_soyad);
-		cout<<"Gönderici tel no: ";
+		cout<<"GÃ¶nderici tel no: ";
 		getline(cin,gonderi[i].gonderen.tel_no);
-		cout<<"Gönderici adres: ";
+		cout<<"GÃ¶nderici adres: ";
 		getline(cin,gonderi[i].gonderen.adres);
 		
-		cout<<"**Alıcı Bilgileri**"<<endl;
-		cout<<"Alıcı ad soyad: ";
+		cout<<"**AlÃ½cÃ½ Bilgileri**"<<endl;
+		cout<<"AlÃ½cÃ½ ad soyad: ";
 		getline(cin,gonderi[i].alici.ad_soyad);
-		cout<<"Alıcı tel no: ";
+		cout<<"AlÃ½cÃ½ tel no: ";
 		getline(cin,gonderi[i].alici.tel_no);
-		cout<<"Alıcı adres: ";
+		cout<<"AlÃ½cÃ½ adres: ";
 		getline(cin,gonderi[i].alici.adres);
 	}
 
-    cout<<"--Gönderi Bilgileri--"<<endl;
-    for(int i=0;i<2;i++){
-     cout<<"--"<<i+1<<". Gönderi Bilgileri--"<<endl;
-		cout<<"Gönderi no: "<<gonderi[i].gonderi_no<<endl;
-		cout<<"Gönderi ağırlığı: "<<gonderi[i].agirlik<<endl;	
-		cout<<"Gönderi hacmi: "<<gonderi[i].hacim<<endl;
-		cout<<"Gönderi garantisi: "<<gonderi[i].garanti<<endl;
-		cout<<"Gönderi ücreti: "<<gonderi[i].ucret<<endl;
+    cout<<"--GÃ¶nderi Bilgileri--"<<endl;
+    for(int i=0;i<5;i++){
+     cout<<"--"<<i+1<<". GÃ¶nderi Bilgileri--"<<endl;
+		cout<<"GÃ¶nderi no: "<<gonderi[i].gonderi_no<<endl;
+		cout<<"GÃ¶nderi aÃ°Ã½rlÃ½Ã°Ã½: "<<gonderi[i].agirlik<<endl;	
+		cout<<"GÃ¶nderi hacmi: "<<gonderi[i].hacim<<endl;
+		cout<<"GÃ¶nderi garantisi: "<<gonderi[i].garanti<<endl;
+		cout<<"GÃ¶nderi Ã¼creti: "<<gonderi[i].ucret<<endl;
 		
-	cout<<"**Gönderen Bilgileri**"<<endl;
-		cout<<"Gönderen ad soyad: "<<gonderi[i].gonderen.ad_soyad<<endl;
-		cout<<"Gönderen tel no: "<<gonderi[i].gonderen.tel_no<<endl;
-		cout<<"Gönderen adres: "<<gonderi[i].gonderen.adres<<endl;
+	cout<<"**GÃ¶nderen Bilgileri**"<<endl;
+		cout<<"GÃ¶nderen ad soyad: "<<gonderi[i].gonderen.ad_soyad<<endl;
+		cout<<"GÃ¶nderen tel no: "<<gonderi[i].gonderen.tel_no<<endl;
+		cout<<"GÃ¶nderen adres: "<<gonderi[i].gonderen.adres<<endl;
 	
-	cout<<"**Alıcı Bilgileri**"<<endl;
-		cout<<"Alıcı ad soyad: "<<gonderi[i].alici.ad_soyad<<endl;
-		cout<<"Alıcı tel no: "<<gonderi[i].alici.tel_no<<endl;
-		cout<<"Alıcı adres: "<<gonderi[i].alici.adres<<endl;
+	cout<<"**AlÃ½cÃ½ Bilgileri**"<<endl;
+		cout<<"AlÃ½cÃ½ ad soyad: "<<gonderi[i].alici.ad_soyad<<endl;
+		cout<<"AlÃ½cÃ½ tel no: "<<gonderi[i].alici.tel_no<<endl;
+		cout<<"AlÃ½cÃ½ adres: "<<gonderi[i].alici.adres<<endl;
 	
 	}
   
